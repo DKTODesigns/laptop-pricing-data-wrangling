@@ -1,80 +1,90 @@
 # laptop-pricing-data-wrangling
 Data wrangling and preprocessing project using pandas: cleaning, transforming, and preparing a laptop pricing dataset for analysis and modeling.
-Data Wrangling – Laptop Pricing Dataset
-Overview
+# Data Wrangling – Laptop Pricing Dataset
 
+## Overview
 This project demonstrates end-to-end data wrangling using a laptop pricing dataset. The goal is to clean, transform, and prepare raw data for analysis by handling missing values, correcting data types, standardizing units, and creating new features.
 
-Tools & Libraries
-Python
-Pandas
-NumPy
-Matplotlib
-Dataset
+## Tools & Libraries
+- Python
+- Pandas
+- NumPy
+- Matplotlib
 
-The dataset contains laptop specifications such as:
+## Dataset
+The dataset includes laptop specifications such as:
+- Manufacturer
+- Category
+- Screen type
+- CPU details
+- RAM and storage
+- Weight
+- Price
 
-Manufacturer
-Category
-Screen type
-CPU details
-RAM and storage
-Weight
-Price
-Data Wrangling Steps
-1. Data Loading
-Loaded dataset from external source using Pandas
-Removed unnecessary column (Unnamed: 0)
-2. Missing Value Handling
-Identified missing values using .isnull()
-Replaced missing numerical values with mean:
-Weight_kg
-Screen_Size_cm
-3. Data Type Correction
-Converted columns to appropriate formats:
-Float: Weight_kg, Screen_Size_cm
-Integer: Price
-4. Feature Engineering
-Created new features:
-Weight_pounds (kg → lbs conversion)
-Price-binned (Low / Medium / High categories)
-5. Normalization
-Scaled CPU_frequency between 0 and 1
-6. Categorical Encoding
-Converted Screen into indicator variables:
-Full HD
-IPS Panel
-Visualization
-Created a bar chart to visualize distribution of price categories
+## Data Wrangling Process
 
-See: price_bins.png
+### 1. Data Loading
+- Loaded dataset from an external source using Pandas
+- Removed the unnecessary `Unnamed: 0` column
 
-Before & After
+### 2. Missing Value Handling
+- Identified missing values using `.isnull()`
+- Replaced missing numerical values with the mean:
+  - `Weight_kg`
+  - `Screen_Size_cm`
 
-Before Cleaning
-Raw dataset loaded with original structure
-before_cleaning.png
+### 3. Data Type Correction
+- Converted columns to appropriate formats for analysis
 
-After Cleaning
-Processed dataset with new features and transformations applied
-after_cleaning.png
+### 4. Feature Engineering
+- Created `Weight_pounds` from `Weight_kg`
+- Created `Price-binned` with Low, Medium, and High categories
 
-Key Takeaways
-Applied real-world data cleaning techniques
-Transformed raw data into analysis-ready format
-Practiced feature engineering and normalization
-Improved dataset usability for machine learning
-Insights
-Majority of laptops fall into the Low price category
-CPU frequency values vary within a normalized range
-Most laptops are relatively lightweight (~under 2.5kg)
-Why This Matters
+### 5. Normalization
+- Scaled `CPU_frequency` between 0 and 1
 
-Data preprocessing is a critical step in any data workflow. This project ensures:
+### 6. Categorical Encoding
+- Converted `Screen` into indicator variables:
+  - `Full HD`
+  - `IPS Panel`
 
-No missing values
-Consistent data types
-Scaled numerical features
-Encoded categorical variables
+## Before & After
 
-These steps make the dataset ready for modeling and analysis.
+### Before Cleaning
+Raw dataset immediately after loading.
+
+![Before Cleaning](./before_cleaning.png)
+
+### After Cleaning
+Processed dataset with transformations applied.
+
+![After Cleaning](./after_cleaning.png)
+
+## Visualization
+
+### Price Category Distribution
+![Price Bins](./price_bins.png)
+
+## Key Takeaways
+- Applied real-world data cleaning techniques
+- Transformed raw data into an analysis-ready format
+- Practiced feature engineering and normalization
+- Prepared the dataset for machine learning workflows
+
+## Insights
+- Most laptops fall into the **Low price category**
+- CPU frequency varies within a normalized range
+- Most devices are relatively lightweight, around or under 2.5 kg
+
+## Why This Matters
+Data preprocessing is a critical step in any data workflow. This project demonstrates how to:
+- Handle missing values
+- Standardize and normalize numerical features
+- Engineer new variables
+- Encode categorical variables for modeling and analysis
+
+## Files Included
+- `data_wrangling_laptop_pricing.ipynb`
+- `before_cleaning.png`
+- `after_cleaning.png`
+- `price_bins.png`
